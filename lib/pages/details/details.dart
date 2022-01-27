@@ -1,4 +1,4 @@
-import 'package:fitness_tracker/pages/details/widgets/stats.dart';
+import 'package:fitness_tracker/pages/details/widgets/Stats.dart';
 import 'package:fitness_tracker/pages/details/widgets/appbar.dart';
 import 'package:fitness_tracker/pages/details/widgets/dates.dart';
 import 'package:fitness_tracker/pages/details/widgets/graph.dart';
