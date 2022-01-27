@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Fitness Tracker',
       theme: ThemeData(
         fontFamily: 'Roboto',
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           headline1: TextStyle(
             fontSize: 14,
             color: Colors.black,
@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => HomePage(),
-        '/details': (context) => DetailsPage(),
+        '/': (context) => const HomePage(),
+        '/details': (context) => const DetailsPage(),
       },
-      initialRoute: '/details',
+      initialRoute: '/',
     );
   }
 }

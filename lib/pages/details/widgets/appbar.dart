@@ -14,14 +14,16 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       leading: IconButton(
-        onPressed: () {},
-        icon: Icon(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        icon: const Icon(
           Icons.arrow_back_ios,
           color: Colors.black,
           size: 16,
         ),
       ),
-      title: Text(
+      title: const Text(
         'Activity',
         style: TextStyle(
           color: Colors.black,
@@ -33,17 +35,17 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         TextButton(
           onPressed: () {},
-          child: Icon(
+          child: const Icon(
             Icons.notifications,
             size: 16,
           ),
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.all(5),
-            maximumSize: Size(30, 30),
-            minimumSize: Size(30, 30),
-            shape: CircleBorder(),
-            primary: Color(0xffffe6da),
-            onPrimary: Color(0xfffa7a3b),
+            maximumSize: const Size(30, 30),
+            minimumSize: const Size(30, 30),
+            shape: const CircleBorder(),
+            primary: const Color(0xffffe6da),
+            onPrimary: const Color(0xfffa7a3b),
           ),
         )
       ],

@@ -14,11 +14,11 @@ class RecentActivities extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Recent Activity', style: Theme.of(context).textTheme.headline1),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
               itemCount: 10,
-              itemBuilder: (context, index) => ActivityItem(),
+              itemBuilder: (context, index) => const ActivityItem(),
             ),
           )
         ],
@@ -51,23 +51,23 @@ class ActivityItem extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
           border: Border.all(
-            color: Color(0xffe1e1e1),
+            color: const Color(0xffe1e1e1),
           ),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
           children: [
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Container(
               padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xffcff2ff),
               ),
               height: 35,
               width: 35,
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       image: AssetImage('assets/running.jpg'),
@@ -75,29 +75,29 @@ class ActivityItem extends StatelessWidget {
                     )),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Text(
               activity,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w900,
               ),
             ),
-            Expanded(child: SizedBox()),
-            Icon(Icons.timer, size: 12),
-            SizedBox(width: 5),
-            Text(
+            const Expanded(child: SizedBox()),
+            const Icon(Icons.timer, size: 12),
+            const SizedBox(width: 5),
+            const Text(
               '30min',
               style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300),
             ),
-            SizedBox(width: 10),
-            Icon(Icons.wb_sunny_outlined, size: 12),
-            SizedBox(width: 5),
-            Text(
+            const SizedBox(width: 10),
+            const Icon(Icons.wb_sunny_outlined, size: 12),
+            const SizedBox(width: 5),
+            const Text(
               '55kcal',
               style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             )
           ],

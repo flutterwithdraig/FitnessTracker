@@ -33,7 +33,7 @@ class _CurrentProgramsState extends State<CurrentPrograms> {
                 'Current Programs',
                 style: Theme.of(context).textTheme.headline1,
               ),
-              Icon(
+              const Icon(
                 Icons.arrow_forward_ios,
                 size: 15,
               ),
@@ -54,7 +54,7 @@ class _CurrentProgramsState extends State<CurrentPrograms> {
                 onTap: _changeProgram,
               );
             },
-            separatorBuilder: (context, index) => SizedBox(width: 20),
+            separatorBuilder: (context, index) => const SizedBox(width: 20),
           ),
         )
       ],
@@ -88,7 +88,7 @@ class Program extends StatelessWidget {
           image: DecorationImage(
             colorFilter: ColorFilter.mode(
               active
-                  ? Color(0xff1ebdf8).withOpacity(.8)
+                  ? const Color(0xff1ebdf8).withOpacity(.8)
                   : Colors.white.withOpacity(.8),
               BlendMode.lighten,
             ),
@@ -112,13 +112,13 @@ class Program extends StatelessWidget {
               Row(
                 children: [
                   Text(program.cals),
-                  SizedBox(width: 15),
+                  const SizedBox(width: 15),
                   Icon(
                     Icons.timer,
                     size: 10,
                     color: active ? Colors.white : Colors.black,
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Text(program.time),
                 ],
               )

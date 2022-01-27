@@ -7,7 +7,7 @@ class Graph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return const Expanded(
       child: SizedBox(
         width: double.infinity,
         child: GraphArea(),
@@ -42,7 +42,7 @@ class _GraphAreaState extends State<GraphArea>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 2500));
+        vsync: this, duration: const Duration(milliseconds: 2500));
     _animationController.forward();
   }
 
@@ -74,13 +74,15 @@ class GraphPainter extends CustomPainter {
       : _size = Tween<double>(begin: 0, end: 1).animate(
           CurvedAnimation(
             parent: animation,
-            curve: Interval(0.0, 0.75, curve: Curves.easeInOutCubicEmphasized),
+            curve: const Interval(0.0, 0.75,
+                curve: Curves.easeInOutCubicEmphasized),
           ),
         ),
         _dotSize = Tween<double>(begin: 0, end: 1).animate(
           CurvedAnimation(
             parent: animation,
-            curve: Interval(0.75, 1, curve: Curves.easeInOutCubicEmphasized),
+            curve:
+                const Interval(0.75, 1, curve: Curves.easeInOutCubicEmphasized),
           ),
         ),
         super(repaint: animation);
@@ -107,14 +109,14 @@ class GraphPainter extends CustomPainter {
     }
 
     Paint linePaint = Paint()
-      ..color = Color(0xff30c3f9)
+      ..color = const Color(0xff30c3f9)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3.0;
 
     Paint shadowPaint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.stroke
-      ..maskFilter = ui.MaskFilter.blur(ui.BlurStyle.solid, 3)
+      ..maskFilter = const ui.MaskFilter.blur(ui.BlurStyle.solid, 3)
       ..strokeWidth = 3.0;
 
     Paint fillPaint = Paint()
@@ -122,7 +124,7 @@ class GraphPainter extends CustomPainter {
         Offset(size.width / 2, 0),
         Offset(size.width / 2, size.height),
         [
-          Color(0xff30c3f9),
+          const Color(0xff30c3f9),
           Colors.white,
         ],
       )
@@ -134,7 +136,7 @@ class GraphPainter extends CustomPainter {
       ..strokeWidth = 8;
 
     Paint dotCenter = Paint()
-      ..color = Color(0xff30c3f9)
+      ..color = const Color(0xff30c3f9)
       ..strokeWidth = 8;
 
     Path linePath = Path();
@@ -168,8 +170,8 @@ class GraphPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
+  bool shouldRepaint(covariant GraphPainter oldDelegate) {
+    return data != oldDelegate.data;
   }
 }
 
